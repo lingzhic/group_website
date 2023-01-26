@@ -1,0 +1,124 @@
+{% load static %}
+{% load blog_extras %}
+<!DOCTYPE html>
+<html>
+<head>
+    {#brower tab name#}
+    <title>Systems Ionics Lab</title>
+
+    <!-- meta -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- css -->
+    {#  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">#}
+    <link rel="stylesheet" href="{% static 'groupweb/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'groupweb/css/pace.css' %}">
+    <link rel="stylesheet" href="{% static 'groupweb/css/custom.css' %}">
+
+    <!-- js -->
+    <script src="{% static 'groupweb/js/jquery-2.1.3.min.js' %}"></script>
+    <script src="{% static 'groupweb/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'groupweb/js/pace.min.js' %}"></script>
+    <script src="{% static 'groupweb/js/modernizr.custom.js' %}"></script>
+
+</head>
+
+<body>
+<div class="container">
+    <header id="site-header">
+        <div class="row">
+            <div class="col-md-4 col-sm-5 col-xs-8">
+                <div class="logo">
+                    {# Web logo and title #}
+                    <h1>
+                        <a href="{% url 'groupweb:index' %}"><img src="{% static 'groupweb/img/test.jpeg' %}" alt=""
+                                                                  width="50px"></a>
+                        <a href="{% url 'groupweb:index' %}">Systems Ionics Lab</a>
+                    </h1>
+                </div>
+            </div>
+
+            <div class="col-md-8 col-sm-7 col-xs-5">
+                <nav class="main-nav" role="navigation">
+                    <div class="navbar-header">
+                        <button type="button" id="trigger-overlay" class="navbar-toggle">
+                            <span class="ion-navicon"></span>
+                        </button>
+                    </div>
+
+                    {#navigation bar#}
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="cl-effect-11"><a href="{% url 'groupweb:index' %}" data-hover="About us">About
+                                us</a></li>
+                            <li class="cl-effect-11"><a href="{% url 'groupweb:research' %}" data-hover="Research">Research</a>
+                            </li>
+                            <li class="cl-effect-11"><a href="{% url 'groupweb:members' %}" data-hover="Group members">Group
+                                members</a></li>
+                            <li class="cl-effect-11"><a href="{% url 'groupweb:publications' %}"
+                                                        data-hover="Publications">Publications</a></li>
+                            <li class="cl-effect-11"><a href="{% url 'groupweb:opportunities' %}"
+                                                        data-hover="Opportunities">Opportunities</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+
+        </div>
+    </header>
+
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-{{ message.tags }} alert-dismissible" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
+</div>
+
+<div class="content-body">
+    <div class="container">
+        <div class="row">
+            <main class="col-md-12">
+                {% block main %}
+                    {#            inbetween this block is expected to show other contents depends on the child page#}
+                {% endblock main %}
+            </main>
+        </div>
+    </div>
+</div>
+
+<footer id="site-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <p class="copyright">2023 Systems Ionics Lab, The Department of Chemical Engineering, The University
+                    of Melbourne</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+<!-- Mobile Menu -->
+<div class="overlay overlay-hugeinc">
+    <button type="button" class="overlay-close"><span class="ion-ios-close-empty"></span></button>
+    <nav>
+        <ul>
+            <li><a href="{% url 'groupweb:index' %}">About us</a></li>
+            <li><a href="{% url 'groupweb:research' %}">Research</a></li>
+            <li><a href="{% url 'groupweb:members' %}">Group members</a></li>
+            <li><a href="{% url 'groupweb:publications' %}">Publications</a></li>
+            <li><a href="{% url 'groupweb:opportunities' %}">Opportunities</a></li>
+        </ul>
+    </nav>
+</div>
+
+<script src="{% static 'groupweb/js/script.js' %}"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.8/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/highlightjs-line-numbers.js/2.7.0/highlightjs-line-numbers.min.js"></script>
+</body>
+</html>
