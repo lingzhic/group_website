@@ -101,7 +101,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = "/static/"
-STATIC_ROOT = os.path.join(BASE_DIR, "/groupweb/static")
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
 # 分页设置
 PAGINATION_SETTINGS = {
