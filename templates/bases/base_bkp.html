@@ -26,46 +26,46 @@
 <body>
 <div class="container">
     <header id="site-header">
-        <div class="row">
+{#        <div class="row">#}
             {# Web logo and title #}
-            <div class="col-md-4 col-sm-5 col-xs-8">
-                <div class="logo">
-                    <h1>
-                        <a href="{% url 'groupweb:index' %}"><img src="{% static 'groupweb/img/test.jpeg' %}" alt=""
-                                                                  width="40px"></a>
-                        <a href="{% url 'groupweb:index' %}">Systems Ionics Lab</a>
-                    </h1>
-                </div>
-            </div>
-
+{#            <div class="col-md-4 col-sm-5 col-xs-8">#}
+{#                <div class="logo">#}
+{#                    <h1>#}
+{#                        <a href="{% url 'groupweb:index' %}"><img src="{% static 'groupweb/img/test.jpeg' %}" alt=""#}
+{#                                                                  width="40px"></a>#}
+{#                        <a href="{% url 'groupweb:index' %}">Systems Ionics Lab</a>#}
+{#                    </h1>#}
+{#                </div>#}
+{#            </div>#}
+{##}
             {# navbar #}
-            <div class="col-md-8 col-sm-7 col-xs-4">
-                <nav class="main-nav" role="navigation">
+{#            <div class="col-md-8 col-sm-7 col-xs-5">#}
+{#                <nav class="main-nav" role="navigation">#}
                     {# navigation bar overlay button (for mobile) #}
-                    <div class="navbar-header">
-                        <button type="button" id="trigger-overlay" class="navbar-toggle">
-                            <span class="ion-navicon"></span>
-                        </button>
-                    </div>
-
+{#                    <div class="navbar-header">#}
+{#                        <button type="button" id="trigger-overlay" class="navbar-toggle">#}
+{#                            <span class="ion-navicon"></span>#}
+{#                        </button>#}
+{#                    </div>#}
+{##}
                     {# navigation bar content #}
-                    <div class="collapse navbar-collapse" id="pc end navbar">
-                        <ul class="nav navbar-nav navbar-right">
-                            <li class="cl-effect-11"><a href="{% url 'groupweb:index' %}"
-                                                        data-hover="About us">About us</a></li>
-                            <li class="cl-effect-11"><a href="{% url 'groupweb:research' %}"
-                                                        data-hover="Research">Research</a></li>
-                            <li class="cl-effect-11"><a href="{% url 'groupweb:members' %}"
-                                                        data-hover="Group members">Group members</a></li>
-                            <li class="cl-effect-11"><a href="{% url 'groupweb:publications' %}"
-                                                        data-hover="Publications">Publications</a></li>
-                            <li class="cl-effect-11"><a href="{% url 'groupweb:opportunities' %}"
-                                                        data-hover="Opportunities">Opportunities</a></li>
-                        </ul>
-                    </div>
-                </nav>
-            </div>
-        </div>
+{#                    <div class="collapse navbar-collapse" id="pc end navbar">#}
+{#                        <ul class="nav navbar-nav navbar-right">#}
+{#                            <li class="cl-effect-11"><a href="{% url 'groupweb:index' %}"#}
+{#                                                        data-hover="About us">About us</a></li>#}
+{#                            <li class="cl-effect-11"><a href="{% url 'groupweb:research' %}"#}
+{#                                                        data-hover="Research">Research</a></li>#}
+{#                            <li class="cl-effect-11"><a href="{% url 'groupweb:members' %}"#}
+{#                                                        data-hover="Group members">Group members</a></li>#}
+{#                            <li class="cl-effect-11"><a href="{% url 'groupweb:publications' %}"#}
+{#                                                        data-hover="Publications">Publications</a></li>#}
+{#                            <li class="cl-effect-11"><a href="{% url 'groupweb:opportunities' %}"#}
+{#                                                        data-hover="Opportunities">Opportunities</a></li>#}
+{#                        </ul>#}
+{#                    </div>#}
+{#                </nav>#}
+{#            </div>#}
+{#        </div>#}
     </header>
 
     {% if messages %}
