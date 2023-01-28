@@ -4,7 +4,7 @@ from django.shortcuts import get_object_or_404, redirect, render
 from django.views.generic import DetailView, ListView
 
 # from pure_pagination.mixins import PaginationMixin
-from instance_models import GroupMember
+from .instance_models import GroupMember, Publication
 
 from .models import Category, Post, Tag
 
@@ -16,25 +16,30 @@ def index_view(request):
 
 def research_view(request):
     context = {}
-    lingzhi = GroupMember(name='lingzhic', position='student', bio='Hi, I am lingzhi')
-    context = {'lingzhi': lingzhi}
     return render(request, 'Research.html', context)
 
 
 def member_view(request):
     context = {}
+    member_list = []
+    lingzhi = GroupMember(name='lingzhi', position='student', bio='Hi, I am lingzhi')
+    member_list.append(lingzhi)
+    context = {'member_list': member_list}
     return render(request, 'Group_members.html', context)
 
 
 def publication_view(request):
     context = {}
+    publication_list = []
+    pub1 = Publication(title='test title', journal='test journal', doi='test doi')
+    publication_list.append(pub1)
+    context = {'publication_list': publication_list}
     return render(request, 'Publications.html', context)
 
 
 def opportunities_view(request):
     context = {}
     return render(request, 'Opportunities.html', context)
-
 
 # class IndexView(ListView):
 #     model = Post

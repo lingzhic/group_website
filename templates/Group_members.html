@@ -19,11 +19,20 @@
           <br>Dr Yang Cao
       </p>
     </div>
+    <br>
+    <br>
 
-    <div class="slope_plot_graph">
+    <h1>Bio list</h1>
+    <div>
     {% block group_member_info %}
-        {% if lingzhic %}
-            <div>{{ lingzhic|safe }}</div>
+        {% if member_list %}
+            {% for member in member_list %}
+                <p style="font-size: x-large">
+                Name: {{ member.name }}<br>
+                Position: {{ member.position }}<br>
+                Bio: {{ member.bio }}<br>
+                </p>
+            {% endfor %}
         {% endif %}
     {% endblock group_member_info %}
     </div>
