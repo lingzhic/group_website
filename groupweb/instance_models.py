@@ -1,4 +1,4 @@
-
+# This is a file for instance definition like group member and publications
 class GroupMember:
     def __init__(self, name, position, bio):
         self.name = name

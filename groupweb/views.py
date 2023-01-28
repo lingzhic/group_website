@@ -3,14 +3,16 @@ from django.db.models import Q
 from django.shortcuts import get_object_or_404, redirect, render
 from django.views.generic import DetailView, ListView
 
-# from pure_pagination.mixins import PaginationMixin
 from .instance_models import GroupMember, Publication
-
-from .models import Category, Post, Tag
+import numpy as np
+# from .models import Category, Post, Tag
+# from pure_pagination.mixins import PaginationMixin
 
 
 def index_view(request):
     context = {}
+    # message = "hello world"
+    # messages.info(request, message)
     return render(request, 'index.html', context)
 
 
@@ -30,10 +32,12 @@ def member_view(request):
 
 def publication_view(request):
     context = {}
+    with open('groupweb/static/txt_info/Publications/Soft_mat', 'r') as f:
+        soft_mat_publication_list = f.readlines()
     publication_list = []
-    pub1 = Publication(title='test title', journal='test journal', doi='test doi')
-    publication_list.append(pub1)
-    context = {'publication_list': publication_list}
+    # pub1 = Publication(title='test title', journal='test journal', doi='test doi')
+    # publication_list.append(pub1)
+    context = {'soft_mat_publication_list': soft_mat_publication_list, 'publication_list': publication_list}
     return render(request, 'Publications.html', context)
 
 
