@@ -31,6 +31,10 @@ def deploy(c):
         cmd = '~/.local/bin/supervisorctl -c ~/etc/supervisord.conf stop {}'.format(supervisor_program_name)
         c.run(cmd)
 
+    # 这里你可能注意到了supervisorctl这个command是使用的从absolute path直接调用的，
+    # 是因为如果直接使用单一的supervisorctl在fabric中会报错，我也不知道为什么
+    # 但是使用absolute path就work了，很迷
+
     # 进入项目根目录，从 Git 拉取最新代码
     with c.cd(project_root_path):
         cmd = 'git pull'

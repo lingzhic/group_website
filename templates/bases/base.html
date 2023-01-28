@@ -28,9 +28,10 @@
 <div class="container">
     <header id="site-header">
         <div class="row">
+
+            {# Web logo and title #}
             <div class="col-md-4 col-sm-5 col-xs-8">
                 <div class="logo">
-                    {# Web logo and title #}
                     <h1>
                         <a href="{% url 'groupweb:index' %}"><img src="{% static 'groupweb/img/test.jpeg' %}" alt=""
                                                                   width="50px"></a>
@@ -39,6 +40,7 @@
                 </div>
             </div>
 
+            {# navbar content#}
             <div class="col-md-8 col-sm-7 col-xs-5">
                 <nav class="main-nav" role="navigation">
                     <div class="navbar-header">
@@ -48,8 +50,8 @@
                     </div>
 
                     {#navigation bar#}
-                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                        <ul class="nav navbar-nav navbar-right">
+                    <div class="collapse navbar-collapse" id="pc end navbar">
+                        <ul class="nav navbar-nav">
                             <li class="cl-effect-11"><a href="{% url 'groupweb:index' %}" data-hover="About us">About
                                 us</a></li>
                             <li class="cl-effect-11"><a href="{% url 'groupweb:research' %}" data-hover="Research">Research</a>
