@@ -19,5 +19,13 @@
           <br>Dr Yang Cao
       </p>
     </div>
+
+    <div class="slope_plot_graph">
+    {% block group_member_info %}
+        {% if lingzhic %}
+            <div>{{ lingzhic|safe }}</div>
+        {% endif %}
+    {% endblock group_member_info %}
+    </div>
 {% endblock main %}
 

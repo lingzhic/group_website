@@ -4,33 +4,41 @@ from django.shortcuts import get_object_or_404, redirect, render
 from django.views.generic import DetailView, ListView
 
 # from pure_pagination.mixins import PaginationMixin
+from instance_models import GroupMember
 
 from .models import Category, Post, Tag
 
 
-class IndexView(ListView):
-    model = Post
-    template_name = "index.html"
+def index_view(request):
+    context = {}
+    return render(request, 'index.html', context)
 
 
-class ResearchView(ListView):
-    model = Post
-    template_name = "Research.html"
+def research_view(request):
+    context = {}
+    lingzhi = GroupMember(name='lingzhic', position='student', bio='Hi, I am lingzhi')
+    context = {'lingzhi': lingzhi}
+    return render(request, 'Research.html', context)
 
 
-class MemberView(ListView):
-    model = Post
-    template_name = "Group_members.html"
+def member_view(request):
+    context = {}
+    return render(request, 'Group_members.html', context)
 
 
-class PubView(ListView):
-    model = Post
-    template_name = "Publications.html"
+def publication_view(request):
+    context = {}
+    return render(request, 'Publications.html', context)
 
 
-class OppView(ListView):
-    model = Post
-    template_name = "Opportunities.html"
+def opportunities_view(request):
+    context = {}
+    return render(request, 'Opportunities.html', context)
+
+
+# class IndexView(ListView):
+#     model = Post
+#     template_name = "index.html"
 
 #
 # # 记得在顶部导入 DetailView
