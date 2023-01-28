@@ -35,6 +35,12 @@ def deploy(c):
     # 是因为如果直接使用单一的supervisorctl在fabric中会报错，我也不知道为什么
     # 但是使用absolute path就work了，很迷
 
+    # Push the content from github repo
+    with c.cd(project_root_path):
+        cmd = 'git stash'
+        responders = _get_github_auth_responders()
+        c.run(cmd, watchers=responders)
+
     # Pull the content from github repo
     with c.cd(project_root_path):
         cmd = 'git pull'
