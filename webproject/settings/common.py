@@ -30,6 +30,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "groupweb",  # register the groupweb application
+    'gunicorn',
 ]
 
 MIDDLEWARE = [
