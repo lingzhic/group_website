@@ -9,27 +9,27 @@ from .models import Category, Post, Tag
 
 
 class IndexView(ListView):
-    model = Tag
+    model = Post
     template_name = "index.html"
 
 
 class ResearchView(ListView):
-    model = Tag
+    model = Post
     template_name = "Research.html"
 
 
 class MemberView(ListView):
-    model = Tag
+    model = Post
     template_name = "Group_members.html"
 
 
 class PubView(ListView):
-    model = Tag
+    model = Post
     template_name = "Publications.html"
 
 
 class OppView(ListView):
-    model = Tag
+    model = Post
     template_name = "Opportunities.html"
 
 #

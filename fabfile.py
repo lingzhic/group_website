@@ -6,7 +6,7 @@ from _credentials import github_password, github_username
 
 def _get_github_auth_responders():
     """
-    返回 GitHub 用户名密码自动填充器
+    return GitHub username and password
     """
     username_responder = Responder(
         pattern="Username for 'https://github.com':",
@@ -26,7 +26,7 @@ def deploy(c):
 
     project_root_path = '~/apps/group_website/'
 
-    # 先停止应用
+    # Stop the app first
     with c.cd(project_root_path):
         cmd = '~/.local/bin/supervisorctl -c ~/etc/supervisord.conf stop {}'.format(supervisor_program_name)
         c.run(cmd)
@@ -35,13 +35,13 @@ def deploy(c):
     # 是因为如果直接使用单一的supervisorctl在fabric中会报错，我也不知道为什么
     # 但是使用absolute path就work了，很迷
 
-    # 进入项目根目录，从 Git 拉取最新代码
+    # Pull the content from github repo
     with c.cd(project_root_path):
         cmd = 'git pull'
         responders = _get_github_auth_responders()
         c.run(cmd, watchers=responders)
 
-    # 重新启动应用
+    # Restart the app
     with c.cd(supervisor_conf_path):
         cmd = '~/.local/bin/supervisorctl -c ~/etc/supervisord.conf start {}'.format(supervisor_program_name)
         c.run(cmd)
