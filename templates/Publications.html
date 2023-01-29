@@ -22,12 +22,10 @@
     <h1>Selected publications</h1>
     <div>
     {% block publication_info %}
-        {% if publication_list %}
-            {% for publication in publication_list %}
+        {% if soft_mat_publication_list %}
+            {% for pub in soft_mat_publication_list %}
                 <p style="font-size: x-large">
-                Name: {{ publication.title }}<br>
-                Position: {{ publication.journal }}<br>
-                Bio: {{ publication.doi }}<br>
+                {{ pub }}
                 </p>
             {% endfor %}
         {% endif %}
