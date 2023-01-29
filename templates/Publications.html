@@ -6,53 +6,32 @@
       <h1>
           <b>Selected publications in systems ionic lab</b>
       </h1>
-
+        <br>
+        <br>
     </div>
 
-    <br>
-    <br>
-    <br>
-    <br>
-
-    <h1 class="text-center">Soft materials</h1>
-    <div class=text-left>
-        {% if soft_mat_publication_list %}
-            {% for pub in soft_mat_publication_list %}
-                <p style="font-size: x-large">
-                {{ pub }}<br>
-                </p>
-            {% endfor %}
-        {% endif %}
-{#          [1] Li, Dan, Marc B. Müller, Scott Gilje, Richard B. Kaner, and Gordon G. Wallace. “Processable Aqueous#}
-{#          Dispersions of Graphene Nanosheets.” Nature Nanotechnology 3, no. 2 (February 2008): 101–5.#}
-{#          https://doi.org/10.1038/nnano.2007.451.#}
-    </div>
-
-    <br>
-    <br>
-    <br>
-    <br>
-
-    <h1 class="text-center">Ion transport</h1>
     <div class=text-left>
       <p style="font-size: x-large">
-          [1] Cheng, Chi, Gengping Jiang, George Philip Simon, Jefferson Zhe Liu, and Dan Li. “Low-Voltage Electrostatic
-          Modulation of Ion Diffusion through Layered Graphene-Based Nanoporous Membranes.” Nature Nanotechnology 13,
-          no. 8 (August 2018): 685–90. https://doi.org/10.1038/s41565-018-0181-4.
+          Publication list
+          <br>1
+          <br>2
+          <br>3...
       </p>
     </div>
 
-{#    <h1>Selected publications</h1>#}
-{#    {% block publication_info %}#}
-{#        {% if publication_list %}#}
-{#            {% for publication in publication_list %}#}
-{#                <p style="font-size: x-large">#}
-{#                Name: {{ publication.title }}<br>#}
-{#                Position: {{ publication.journal }}<br>#}
-{#                DOI: {{ publication.doi }}<br>#}
-{#                </p>#}
-{#            {% endfor %}#}
-{#        {% endif %}#}
-{#    {% endblock publication_info %}#}
+    <h1>Selected publications</h1>
+    <div>
+    {% block publication_info %}
+        {% if publication_list %}
+            {% for publication in publication_list %}
+                <p style="font-size: x-large">
+                Name: {{ publication.title }}<br>
+                Position: {{ publication.journal }}<br>
+                Bio: {{ publication.doi }}<br>
+                </p>
+            {% endfor %}
+        {% endif %}
+    {% endblock publication_info %}
+    </div>
 {% endblock main %}
 
