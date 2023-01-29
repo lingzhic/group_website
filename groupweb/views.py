@@ -32,10 +32,10 @@ def publication_view(request):
     context = {}
     publication_list = []
     with open('groupweb/static/txt_info/Publications/Soft_mat') as f:
-        soft_mat_pulication_list = f.readlines()
+        soft_mat_publication_list = f.readlines()
     # pub1 = Publication(title='test title', journal='test journal', doi='test doi')
     # publication_list.append(pub1)
-    context = {'soft_mat_pulication_list':soft_mat_pulication_list, 'publication_list': publication_list}
+    context = {'soft_mat_publication_list':soft_mat_publication_list, 'publication_list': publication_list}
     return render(request, 'Publications.html', context)
 
 
