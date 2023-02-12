@@ -28,18 +28,18 @@
     <header id="site-header">
         <div class="row">
             {# Web logo and title #}
-            <div class="col-md-4 col-sm-5 col-xs-8">
+            <div class="col-md-4 col-sm-8 col-xs-9">
                 <div class="logo">
                     <h1>
                         <a href="{% url 'groupweb:index' %}"><img src="{% static 'groupweb/img/test.jpeg' %}" alt=""
-                                                                  width="40px"></a>
+                                                                  width="30px"></a>
                         <a href="{% url 'groupweb:index' %}">Systems Ionics Lab</a>
                     </h1>
                 </div>
             </div>
 
             {# navbar #}
-            <div class="col-md-8 col-sm-7 col-xs-4">
+            <div class="col-md-8 col-sm-4 col-xs-3">
                 <nav class="main-nav" role="navigation">
                     {# navigation bar overlay button (for mobile) #}
                     <div class="navbar-header">
@@ -84,7 +84,7 @@
         <div class="row">
             <main class="col-md-12">
                 {% block main %}
-                    {#            inbetween this block is expected to show other contents depends on the child page#}
+                    {# inbetween this block is expected to show other contents depends on the child page #}
                 {% endblock main %}
             </main>
         </div>

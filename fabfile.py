@@ -32,7 +32,7 @@ def deploy(c):
         c.run(cmd)
 
     # 这里你可能注意到了supervisorctl这个command是使用的从absolute path直接调用的，
-    # 是因为如果直接使用单一的supervisorctl在fabric中会报错，我也不知道为什么
+    # 是因为如果直接使用单一的supervisorctl command去调用supervisor 在fabric中会报错，我也不知道为什么
     # 但是使用absolute path就work了，很迷
 
     # Pull the content from github repo
