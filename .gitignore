@@ -108,6 +108,7 @@ media/
 _credentials.py
 .production
 groupweb.pem
+static
 
 # Pycharm .idea folder, see following link to know which files should be ignored:
 # https://www.jetbrains.com/help/pycharm/synchronizing-and-sharing-settings.html#7e81d3cb
