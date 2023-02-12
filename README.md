@@ -1,4 +1,8 @@
 # Systems Ionics Lab
-This is the repo for Dan's group website
+We are a research group in The University of Melbourne, Australia.
 
-Managed by Lingzhi
+Our research includes ionotronics and 2D soft membrane materials.
+
+You can find our group website via: .
+
+This repo is currently managed by Lingzhi Cao
